@@ -1,63 +1,40 @@
 # encoding: UTF-8
-# encrypt_users.rb - تشفير بيانات العملاء
+# encrypt_final.rb - تشفير نهائي لبيانات العملاء
 require 'base64'
 require 'json'
 require 'openssl'
 require 'digest'
 
-class SuperEncryptor
-  def initialize(secret_key = "eng_marwan_adel_secret_2026")
-    @secret_key = secret_key
-  end
+# ==================== إعدادات التشفير ====================
+SECRET_KEY = "eng_marwan_adel_2026_super_secret"
+CIPHER_ALGORITHM = "aes-256-cbc"
 
-  # تشفير AES-256
-  def aes_encrypt(text)
-    cipher = OpenSSL::Cipher.new('aes-256-cbc')
+# ==================== دوال التشفير ====================
+
+def encrypt_data(text)
+  return "" if text.nil? || text.empty?
+  
+  begin
+    # إنشاء cipher object
+    cipher = OpenSSL::Cipher.new(CIPHER_ALGORITHM)
     cipher.encrypt
+    
+    # إنشاء IV عشوائي
     iv = cipher.random_iv
-    cipher.key = Digest::SHA256.digest(@secret_key)
     
+    # تعيين المفتاح (32 بايت = 256 بت)
+    cipher.key = Digest::SHA256.digest(SECRET_KEY)
+    
+    # تشفير البيانات
     encrypted = cipher.update(text.to_s) + cipher.final
-    (iv + encrypted).unpack('H*').first
-  end
-
-  # تشفير كامل
-  def full_encrypt(text)
-    return nil if text.nil? || text.empty?
     
-    # طبقة 1: عكس النص
-    reversed = text.to_s.reverse
+    # دمج IV مع البيانات المشفرة وتحويلها لـ Base64
+    result = Base64.strict_encode64(iv + encrypted)
     
-    # طبقة 2: تحويل لـ Base64
-    b64 = Base64.strict_encode64(reversed)
-    
-    # طبقة 3: تشفير AES
-    aes = aes_encrypt(b64)
-    
-    # طبقة 4: Base64 مرة أخرى
-    Base64.strict_encode64(aes)
-  end
-
-  # تشفير جميع الحقول
-  def encrypt_all(original_data)
-    encrypted_users = original_data["users"].map do |user|
-      {
-        "email" => full_encrypt(user["email"]),
-        "password" => full_encrypt(user["password"]),
-        "device_id" => full_encrypt(user["device_id"]),
-        "expiry" => full_encrypt(user["expiry"]),
-        "name" => full_encrypt(user["name"])
-      }
-    end
-
-    {
-      "users" => encrypted_users,
-      "metadata" => {
-        "version" => "2.0",
-        "algorithm" => "AES-256-CBC+Reverse+Base64",
-        "created_at" => Time.now.to_s
-      }
-    }
+    result
+  rescue => e
+    puts "خطأ في التشفير: #{e.message}"
+    Base64.strict_encode64(text.to_s) # fallback
   end
 end
 
@@ -70,18 +47,63 @@ original_data = {
       "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f94",
       "expiry": "2027-12-31",
       "name": "مستخدم تجريبي"
+    },
+    {
+      "email": "ahmed@example.com", 
+      "password": "ahmed123456",
+      "device_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "expiry": "2028-06-30",
+      "name": "أحمد محمد"
+    },
+    {
+      "email": "fatma@example.com",
+      "password": "fatma789",
+      "device_id": "9876f54e-3d2c-4b1a-8a7b-6c5d4e3f2a1b", 
+      "expiry": "2028-12-31",
+      "name": "فاطمة الزهراء"
     }
   ]
 }
 
-# تشفير البيانات
-encryptor = SuperEncryptor.new("eng_marwan_adel_secret_2026")
-encrypted_data = encryptor.encrypt_all(original_data)
+# ==================== تشفير جميع البيانات ====================
+encrypted_users = []
 
-# حفظ الملف المشفر
-File.write("users_encrypted.json", JSON.pretty_generate(encrypted_data))
+original_data[:users].each do |user|
+  encrypted_user = {
+    "email" => encrypt_data(user[:email]),
+    "password" => encrypt_data(user[:password]),
+    "device_id" => encrypt_data(user[:device_id]),
+    "expiry" => encrypt_data(user[:expiry]),
+    "name" => encrypt_data(user[:name])
+  }
+  encrypted_users << encrypted_user
+end
 
-puts "✅ تم تشفير البيانات بنجاح!"
-puts "📁 الملف المشفر: users_encrypted.json"
-puts "🔑 المفتاح السري: eng_marwan_adel_secret_2026"
-puts "⬆️ ارفع هذا الملف على GitHub بدلاً من الملف الأصلي"
+# ==================== إنشاء الملف النهائي ====================
+final_data = {
+  "encrypted_data" => encrypted_users,
+  "metadata" => {
+    "version" => "3.0",
+    "algorithm" => "AES-256-CBC",
+    "encoding" => "Base64",
+    "created_at" => Time.now.strftime("%Y-%m-%d %H:%M:%S"),
+    "note" => "هذا الملف مشفر - لا يمكن قراءته مباشرة"
+  }
+}
+
+# حفظ الملف
+File.write("users_final.json", JSON.pretty_generate(final_data), encoding: 'utf-8')
+
+puts "=" * 50
+puts "✅ تم التشفير بنجاح!"
+puts "=" * 50
+puts "📁 الملف الناتج: users_final.json"
+puts "🔑 المفتاح السري: #{SECRET_KEY}"
+puts "📊 عدد المستخدمين: #{original_data[:users].length}"
+puts "=" * 50
+puts "\nمحتوى الملف المشفر (للتحقق):"
+puts JSON.pretty_generate(final_data).slice(0, 500) + "..."
+puts "=" * 50
+puts "\n⬆️ ارفع ملف users_final.json على GitHub"
+puts "📍 الرابط سيكون:"
+puts "https://raw.githubusercontent.com/eng-marwanadel/system/refs/heads/main/users_final.json"
