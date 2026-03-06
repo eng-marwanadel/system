@@ -1,4 +1,68 @@
-{
+# encoding: UTF-8
+# encrypt_users.rb - تشفير بيانات العملاء
+require 'base64'
+require 'json'
+require 'openssl'
+require 'digest'
+
+class SuperEncryptor
+  def initialize(secret_key = "eng_marwan_adel_secret_2026")
+    @secret_key = secret_key
+  end
+
+  # تشفير AES-256
+  def aes_encrypt(text)
+    cipher = OpenSSL::Cipher.new('aes-256-cbc')
+    cipher.encrypt
+    iv = cipher.random_iv
+    cipher.key = Digest::SHA256.digest(@secret_key)
+    
+    encrypted = cipher.update(text.to_s) + cipher.final
+    (iv + encrypted).unpack('H*').first
+  end
+
+  # تشفير كامل
+  def full_encrypt(text)
+    return nil if text.nil? || text.empty?
+    
+    # طبقة 1: عكس النص
+    reversed = text.to_s.reverse
+    
+    # طبقة 2: تحويل لـ Base64
+    b64 = Base64.strict_encode64(reversed)
+    
+    # طبقة 3: تشفير AES
+    aes = aes_encrypt(b64)
+    
+    # طبقة 4: Base64 مرة أخرى
+    Base64.strict_encode64(aes)
+  end
+
+  # تشفير جميع الحقول
+  def encrypt_all(original_data)
+    encrypted_users = original_data["users"].map do |user|
+      {
+        "email" => full_encrypt(user["email"]),
+        "password" => full_encrypt(user["password"]),
+        "device_id" => full_encrypt(user["device_id"]),
+        "expiry" => full_encrypt(user["expiry"]),
+        "name" => full_encrypt(user["name"])
+      }
+    end
+
+    {
+      "users" => encrypted_users,
+      "metadata" => {
+        "version" => "2.0",
+        "algorithm" => "AES-256-CBC+Reverse+Base64",
+        "created_at" => Time.now.to_s
+      }
+    }
+  end
+end
+
+# ==================== البيانات الأصلية ====================
+original_data = {
   "users": [
     {
       "email": "test@example.com",
@@ -9,3 +73,15 @@
     }
   ]
 }
+
+# تشفير البيانات
+encryptor = SuperEncryptor.new("eng_marwan_adel_secret_2026")
+encrypted_data = encryptor.encrypt_all(original_data)
+
+# حفظ الملف المشفر
+File.write("users_encrypted.json", JSON.pretty_generate(encrypted_data))
+
+puts "✅ تم تشفير البيانات بنجاح!"
+puts "📁 الملف المشفر: users_encrypted.json"
+puts "🔑 المفتاح السري: eng_marwan_adel_secret_2026"
+puts "⬆️ ارفع هذا الملف على GitHub بدلاً من الملف الأصلي"
