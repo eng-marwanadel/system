@@ -1,12 +1,12 @@
 {
   "devices": [
-    "8412d06c-24a2-4bfd-a09b-26a2634b9f95"
+    "8412d06c-24a2-4bfd-a09b-26a2634b9f94"
   ],
   "users": [
     {
       "email": "test@example.com",
       "password": "password123",
-      "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f95",
+      "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f94",
       "expiry": "2027-12-31"
     }
   ]
