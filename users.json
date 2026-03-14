@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "email": "test@example.com",
+      "email": "marwan@adel.com",
       "password": "password123",
-      "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f95",
-      "expiry_date": "2027-12-31",
+      "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f94",
+      "expiry_date": "2020-12-31",
       "active": true
     }
   ]
