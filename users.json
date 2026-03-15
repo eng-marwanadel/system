@@ -3,7 +3,154 @@
     {
       "email": "marwan@adel.com",
       "password": "password123",
-      "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f94",
+      "device_id": "8412d06c-24a2-4bfd-a09b-26a2634b9f95",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user1@adel.com",
+      "password": "password123",
+      "device_id": "00000001-0001-4001-8001-000000000001",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user2@adel.com",
+      "password": "password123",
+      "device_id": "00000002-0002-4002-8002-000000000002",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user3@adel.com",
+      "password": "password123",
+      "device_id": "00000003-0003-4003-8003-000000000003",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user4@adel.com",
+      "password": "password123",
+      "device_id": "00000004-0004-4004-8004-000000000004",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user5@adel.com",
+      "password": "password123",
+      "device_id": "00000005-0005-4005-8005-000000000005",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user6@adel.com",
+      "password": "password123",
+      "device_id": "00000006-0006-4006-8006-000000000006",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user7@adel.com",
+      "password": "password123",
+      "device_id": "00000007-0007-4007-8007-000000000007",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user8@adel.com",
+      "password": "password123",
+      "device_id": "00000008-0008-4008-8008-000000000008",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user9@adel.com",
+      "password": "password123",
+      "device_id": "00000009-0009-4009-8009-000000000009",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user10@adel.com",
+      "password": "password123",
+      "device_id": "0000000a-000a-400a-800a-00000000000a",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user11@adel.com",
+      "password": "password123",
+      "device_id": "0000000b-000b-400b-800b-00000000000b",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user12@adel.com",
+      "password": "password123",
+      "device_id": "0000000c-000c-400c-800c-00000000000c",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user13@adel.com",
+      "password": "password123",
+      "device_id": "0000000d-000d-400d-800d-00000000000d",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user14@adel.com",
+      "password": "password123",
+      "device_id": "0000000e-000e-400e-800e-00000000000e",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user15@adel.com",
+      "password": "password123",
+      "device_id": "0000000f-000f-400f-800f-00000000000f",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user16@adel.com",
+      "password": "password123",
+      "device_id": "00000010-0010-4010-8010-000000000010",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user17@adel.com",
+      "password": "password123",
+      "device_id": "00000011-0011-4011-8011-000000000011",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user18@adel.com",
+      "password": "password123",
+      "device_id": "00000012-0012-4012-8012-000000000012",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user19@adel.com",
+      "password": "password123",
+      "device_id": "00000013-0013-4013-8013-000000000013",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user20@adel.com",
+      "password": "password123",
+      "device_id": "00000014-0014-4014-8014-000000000014",
+      "expiry_date": "2027-12-31",
+      "active": true
+    },
+    {
+      "email": "user21@adel.com",
+      "password": "password123",
+      "device_id": "00000015-0015-4015-8015-000000000015",
       "expiry_date": "2027-12-31",
       "active": true
     }
