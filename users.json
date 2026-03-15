@@ -7,6 +7,127 @@
       "expiry_date": "2027-12-31",
       "active": true,
       "welcome_message": "أهلاً بمهندسنا المبدع مروان"
+    },
+    {
+      "email": "ahmed@example.com",
+      "password": "password123",
+      "device_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً أحمد، نتمنى لك يوماً موفقاً"
+    },
+    {
+      "email": "mohamed@example.com",
+      "password": "password123",
+      "device_id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً بمهندسنا محمد، سعداء بانضمامك"
+    },
+    {
+      "email": "sara@example.com",
+      "password": "password123",
+      "device_id": "1e2a3d4f-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً سارة، تصميماتك رائعة"
+    },
+    {
+      "email": "khaled@example.com",
+      "password": "password123",
+      "device_id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً خالد، شرفتنا"
+    },
+    {
+      "email": "nadia@example.com",
+      "password": "password123",
+      "device_id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً نادية، إبداعك يزيدنا تألقاً"
+    },
+    {
+      "email": "youssef@example.com",
+      "password": "password123",
+      "device_id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً يوسف، ننتظر أعمالك المميزة"
+    },
+    {
+      "email": "fatma@example.com",
+      "password": "password123",
+      "device_id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً فاطمة، نورت المكتبة"
+    },
+    {
+      "email": "ali@example.com",
+      "password": "password123",
+      "device_id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً علي، شكراً لاختيارك لنا"
+    },
+    {
+      "email": "hassan@example.com",
+      "password": "password123",
+      "device_id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً حسن، إبداع متجدد"
+    },
+    {
+      "email": "mona@example.com",
+      "password": "password123",
+      "device_id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً منى، أفكارك ملهمة"
+    },
+    {
+      "email": "tamer@example.com",
+      "password": "password123",
+      "device_id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً تامر، معاً نحو الأفضل"
+    },
+    {
+      "email": "heba@example.com",
+      "password": "password123",
+      "device_id": "0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً هبة، تميز دائم"
+    },
+    {
+      "email": "gamal@example.com",
+      "password": "password123",
+      "device_id": "1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً جمال، خبرتك تثري المجموعة"
+    },
+    {
+      "email": "laila@example.com",
+      "password": "password123",
+      "device_id": "2d3e4f5a-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "أهلاً ليلى، إطلالتك مميزة"
+    },
+    {
+      "email": "osama@example.com",
+      "password": "password123",
+      "device_id": "3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+      "expiry_date": "2027-12-31",
+      "active": true,
+      "welcome_message": "مرحباً أسامة، شرفتنا"
     }
   ]
 }
+```
