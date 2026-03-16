@@ -9,8 +9,8 @@
       "welcome_message": "أهلاً بمهندسنا المبدع مروان"
     },
     {
-      "email": "ahmed@example.com",
-      "password": "password123",
+      "email": "dina@ahmed.com",
+      "password": "dina123",
       "device_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
       "expiry_date": "2027-12-31",
       "active": true,
