@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "email": "marwan@adel.com",
-      "password": "password123",
+      "email": "MARWAN",
+      "password": "MARWAN",
       "device_id": "83fff807-52d0-43b2-89f0-a137287dd3c6",
       "expiry_date": "2027-12-31",
       "active": true,
